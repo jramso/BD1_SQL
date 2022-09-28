@@ -1,1 +1,1 @@
-SELECT * from departamento
+SELECT * from departamento;
