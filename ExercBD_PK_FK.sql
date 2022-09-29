@@ -1,6 +1,5 @@
 -- Active: 1664398445942@@127.0.0.1@5433@jiyrzzup@public
 
-
 CREATE TABLE PROJETO(
 	numero integer PRIMARY KEY,
 	nome varchar(100),
