@@ -170,3 +170,35 @@ as select * from empregado;
 create table departamento2
 as select * from departamento;
 
+--2)
+-- PROJETO2
+--a),b)
+INSERT into projeto2 VALUES
+(50,'Ginásio de Esportes','Serra'),
+(51,'Teatro','Vitória');
+--c)
+UPDATE projeto2 SET nome='Aguas Claras'
+WHERE numero=25;
+--d)
+UPDATE projeto2 SET nome='Águas Limpas '
+WHERE numero=25;
+--e)
+UPDATE projeto2 SET localizacao='Serra'
+WHERE numero=10;
+--f)
+DELETE FROM projeto2
+WHERE numero=50;
+
+-- DEPARTAMENTO_PROJETO2
+
+--a)
+
+DELETE FROM departamento_projeto2;
+
+--b)
+insert into departamento_projeto2
+SELECT * from departamento_projeto;
+-- TABELAS_CRIADAS ANTERIORMENTE:
+-- a)
+drop table DEPARTAMENTO_PROJETO2, PROJETO2, EMPREGADO2, DEPARTAMENTO2;
+--FIM SQL.
