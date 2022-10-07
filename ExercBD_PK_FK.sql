@@ -1,5 +1,8 @@
 -- Active: 1664398445942@@127.0.0.1@5433@jiyrzzup@public
 
+drop table departamento_projeto,departamento;
+drop table empregado;
+drop table empregado_projeto,dependente,historico_salario;
 CREATE TABLE PROJETO(
 	numero integer PRIMARY KEY,
 	nome varchar(100),
@@ -26,14 +29,13 @@ CREATE TABLE EMPREGADO(
 	rg_supervisor INTEGER,
 	salario float,
 	dat_inic_sal date,
-	foreign key (rg_supervisor) REFERENCES departamento(rg_gerente),
-    Foreign Key (depto) REFERENCES departamento(numero)
+	constraint FK_depto foreign key (depto) REFERENCES departamento(numero), 
+	constraint FK_empregado Foreign Key (rg_supervisor) REFERENCES empregado(rg)
 );
 CREATE TABLE Empregado_projeto(
 	codigo integer NOT NULL PRIMARY KEY,
 	rg_empregado INTEGER,
 	numero_projeto integer,
-	horas timestamp,
     FOREIGN Key (rg_empregado) REFERENCES empregado(rg),
     FOREIGN KEY (numero_projeto) REFERENCES projeto(numero)
 );
@@ -53,3 +55,4 @@ CREATE TABLE Historico_salario(
 	salario float,
     Foreign Key (rg) REFERENCES empregado(rg)
 );
+
