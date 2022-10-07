@@ -59,5 +59,114 @@ insert into historico_salario VALUES
 (4040,'2010-10-01','2012-10-31',3500.00),
 (7070,'2008-01-01','2008-07-31',1000.00);
 
--- SELECTS
+-- Exercícios de seleção
+-- 1)
+SELECT * 
+from projeto;
+-- 2)
+SELECT nome,localizacao,numero 
+from projeto;
+-- 3)
+SELECT * 
+from projeto 
+where localizacao='Vitória'; 
+-- 4)
+SELECT nome, numero
+FROM projeto
+WHERE localizacao='Vitória';
+--5)
+SELECT *
+FROM projeto
+WHERE numero>10;
+--6)
+SELECT *
+FROM empregado
+WHERE salario>3000;
+--7)
+SELECT *
+FROM empregado
+WHERE rg_supervisor='1010';
+--8)
+SELECT *
+FROM empregado
+WHERE rg_supervisor='1010';
+--9)
+SELECT *
+FROM historico_salario
+WHERE rg='4040';
+--10)
+SELECT *
+FROM empregado
+WHERE rg_supervisor<'2020';
+--11)
+SELECT *
+FROM projeto
+WHERE numero>='10';
+--12)
+SELECT rg,nome
+FROM empregado
+WHERE rg_supervisor<='2020';
+--13)
+SELECT *
+FROM empregado
+WHERE rg_supervisor IS NULL;
+--14)
+SELECT *
+FROM empregado
+WHERE rg_supervisor IS NOT NULL;
+--15)
+SELECT *
+FROM empregado
+WHERE depto!=2;
+--16)
+SELECT nome,cpf
+FROM empregado
+WHERE depto=2;
+--17)
+SELECT nome,cpf
+FROM empregado
+WHERE depto=1;
+--18)
+SELECT nome
+FROM empregado
+WHERE salario>5500;
+--19)
+SELECT nome,salario
+FROM empregado
+WHERE salario>3500;
+--20)
+SELECT *
+FROM empregado
+WHERE dat_inic_sal>'2012-02-01';
+--21)
+SELECT nome
+FROM empregado
+WHERE dat_inic_sal>='2012-05-01';
+--22)
+SELECT cpf
+FROM empregado
+WHERE dat_inic_sal>='2012-05-01';
+--23)
+SELECT *
+FROM dependente
+WHERE nascimento>'1990-06-01';
+--24)
+SELECT nome_dependente,sexo
+FROM dependente
+WHERE relacao='Filho';
+
+
+-- Exercícios de Manipulação: inclusão, alteração e exclusão
+--1
+CREATE TABLE departamento_projeto2
+AS SELECT * from departamento_projeto;
+
+CREATE Table projeto2
+as select * from projeto;
+
+create table empregado2
+as select * from empregado;
+
+create table departamento2
+as select * from departamento;
 
